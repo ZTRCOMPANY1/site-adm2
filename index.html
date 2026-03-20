@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZTR Control System Real</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-badge">Z</div>
+        <div>
+          <h1>ZTR Control</h1>
+          <p>Real Monitor Dashboard</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+        <button class="nav-btn" data-section="monitoramento">Monitoramento</button>
+        <button class="nav-btn" data-section="seguranca">Segurança</button>
+        <button class="nav-btn" data-section="integracoes">Integrações</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="mini-status">
+          <span class="pulse-dot"></span>
+          Sistema online
+        </div>
+        <p>GitHub Pages + APIs reais</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <div>
+            <h2 id="sectionTitle">Dashboard</h2>
+            <p id="sectionSubtitle">Dados reais de monitoramento</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="live-clock" id="liveClock">--:--:--</div>
+          <button class="action-btn" id="refreshBtn">Atualizar</button>
+        </div>
+      </header>
+
+      <section class="content active" id="dashboard">
+        <div class="hero-card glass">
+          <div>
+            <p class="eyebrow">Painel real</p>
+            <h3>Status real dos sites monitorados</h3>
+            <p class="hero-text">
+              Este painel usa APIs reais para monitoramento. Algumas áreas dependem de serviços externos configurados por você.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <article class="stat-card glass">
+            <p>Sites online</p>
+            <h4 id="onlineCount">-</h4>
+            <span class="muted">Baseado no UptimeRobot</span>
+          </article>
+
+          <article class="stat-card glass">
+            <p>Sites offline</p>
+            <h4 id="offlineCount">-</h4>
+            <span class="muted">Baseado no UptimeRobot</span>
+          </article>
+
+          <article class="stat-card glass">
+            <p>Resposta média</p>
+            <h4 id="avgResponse">-</h4>
+            <span class="muted">Última média disponível</span>
+          </article>
+
+          <article class="stat-card glass">
+            <p>Uptime médio</p>
+            <h4 id="avgUptime">-</h4>
+            <span class="muted">Taxa real</span>
+          </article>
+        </div>
+
+        <article class="panel glass">
+          <div class="panel-header">
+            <h3>Sites monitorados</h3>
+            <span class="badge">Real</span>
+          </div>
+          <div class="site-list" id="siteList"></div>
+        </article>
+      </section>
+
+      <section class="content" id="monitoramento">
+        <div class="section-head">
+          <div>
+            <h3>Monitoramento</h3>
+            <p>Status HTTP, uptime e resposta via UptimeRobot.</p>
+          </div>
+        </div>
+
+        <article class="panel glass">
+          <div class="panel-header">
+            <h3>Tabela de monitoramento</h3>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Site</th>
+                  <th>Status</th>
+                  <th>Tipo</th>
+                  <th>Resposta</th>
+                  <th>Uptime</th>
+                </tr>
+              </thead>
+              <tbody id="monitorTable"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section class="content" id="seguranca">
+        <div class="section-head">
+          <div>
+            <h3>Segurança</h3>
+            <p>Headers e SSL por domínio.</p>
+          </div>
+        </div>
+
+        <article class="panel glass">
+          <div class="panel-header">
+            <h3>Análise de segurança</h3>
+          </div>
+          <div class="site-list" id="securityList"></div>
+        </article>
+      </section>
+
+      <section class="content" id="integracoes">
+        <div class="section-head">
+          <div>
+            <h3>Integrações</h3>
+            <p>Configuração das APIs reais.</p>
+          </div>
+        </div>
+
+        <article class="panel glass">
+          <div class="panel-header">
+            <h3>Configuração</h3>
+          </div>
+
+          <div class="event-item">
+            <strong>UptimeRobot API Key</strong>
+            <div>Coloque sua chave no <code>app.js</code>.</div>
+          </div>
+
+          <div class="event-item">
+            <strong>Domínios monitorados</strong>
+            <div>Liste seus sites no array <code>SECURITY_DOMAINS</code>.</div>
+          </div>
+
+          <div class="event-item">
+            <strong>Analytics real</strong>
+            <div>Para visitantes reais, conecte GA4/Plausible em uma etapa separada.</div>
+          </div>
+
+          <div class="event-item">
+            <strong>Logs reais</strong>
+            <div>Isso exige backend/serverless; GitHub Pages sozinho não entrega isso.</div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
